@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>貪食蛇</title>
+</head>
+<body>
+  <!-- 創建遊戲的主容器 -->
+  <div id="main">
+    <!-- 設置遊戲的舞台 -->
+    <div id="stage">
+      <!-- 設置蛇(在舞台內) -->
+      <div id="snake">
+        <!-- snake 內部的 div，表示蛇的每一節 -->
+        <div></div>
+      </div>
+      <!-- 設置食物(在舞台內) -->
+      <div id="food">
+        <!-- 添加四個 div，組合成食物的樣式 -->
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <!-- 設置遊戲的積分板 -->
+    <div id="score-panel">
+      <div>
+        SCORE:<span id="score">0</span>
+      </div>
+      <div>
+        LEVEL:<span id="level">1</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+// 設置變量
+@bg-color: #b7d4a8;
+
+// 清除默認樣式
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: bold 20px "Courier"
+}
+
+// 設置主窗口的樣式
+#main {
+  width: 360px;
+  height: 420px;
+  background-color: @bg-color;
+  margin: 100px auto;
+  border: 10px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#stage {
+  width: 304px;
+  height: 304px;
+  border: 2px solid black;
+  /* 限制蛇的移動範圍 */
+  position: relative;
+  #snake {
+    &>div {
+      width: 10px;
+      height: 10px;
+      background-color: #000;
+      /* 怪異盒模型 + 邊框讓蛇本身還是 10*10，但看上去每節都是存在距離 */
+      border: 1px solid @bg-color;
+      /* 蛇位置需要改變，但只能在舞台內 */
+      position: absolute;
+    }
+  }
+  &>#food {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    /* 臨時設置不然因為絕對定位與蛇重疊 */
+    left: 40px;
+    top: 100px;
+    &>div {
+      width: 4px;
+      height: 4px;
+      background-color: black;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+#score-panel {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
